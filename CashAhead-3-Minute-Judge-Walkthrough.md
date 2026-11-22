@@ -1,6 +1,6 @@
 # CashAhead | Three-minute video and judge walkthrough
 
-Start on the [CashAhead camera landing page](https://cashahead-ps1.vercel.app/). A judge can reproduce the entire video in one browser tab with the sample data already in the app. To run it on your own computer, see the local testing instructions at the end.
+Start on the [CashAhead camera landing page](https://cashahead-ps1.vercel.app/). A judge can reproduce the entire video in one browser tab with the sample data already in the app. To explore at your own pace, choose **Start the full demo** at the end of the landing page or [start directly on Overview](https://cashahead-ps1.vercel.app/?demo=friday&start=overview). From Overview, choose **Review rescue plan** when you reach the Friday shortfall. The timed video uses the cover shortcut below.
 
 **For the presenter:** show the app throughout. Read the blockquotes aloud. The bold *On-screen caption* lines are short video overlays you can add in editing. The clicks are your directions. Use a desktop browser, keep the PDF and the app in the recording area, and begin with the camera cover at the top of the page.
 

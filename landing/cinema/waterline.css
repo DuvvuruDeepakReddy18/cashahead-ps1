@@ -1773,11 +1773,17 @@ button {
   background: var(--brand);
   color: var(--ink);
 }
-#cta .fine {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 12px;
-  color: var(--mute);
-  margin-top: 4vh;
+#cta .btns .studio-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+#cta .btns a:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+#cta .btns .primary:focus-visible {
+  outline-color: var(--stage-ink);
 }
 
 #cta img.crew-badge {

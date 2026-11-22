@@ -25,6 +25,22 @@ export async function checkCameraTour(browser,url){
     await page.locator('#rail button').last().click();
     await page.locator('.slide.on h3').getByText('Match the payment.').waitFor();
 
+    for (const width of [1280,390]) {
+      await page.setViewportSize({width,height:844});
+      await page.goto(url);
+      const closing=page.getByRole('region',{name:'Get started'});
+      assert.equal(await closing.getByRole('link',{name:'Open my studio'}).getAttribute('href'),'/mine');
+      await closing.getByRole('link',{name:'Start the full demo'}).click();
+      await page.waitForURL(url+'/app?demo=friday');
+      await page.getByRole('heading',{name:'Overdue invoices'}).waitFor();
+      assert.equal(await page.locator('[data-stat="cash"]').innerText(),'₹6,000');
+      assert.equal(await page.locator('[data-stat="friday"]').innerText(),'−₹4,000');
+      await page.reload();
+      await page.getByRole('button',{name:/Review rescue plan/}).click();
+      await page.waitForURL(url+'/app/rescue?demo=friday');
+      await page.getByRole('heading',{name:/₹4,000 short on/}).waitFor();
+    }
+    console.log('PASS · highlighted footer starts on judge Overview, then opens the Friday rescue plan on desktop and mobile');
     await page.setViewportSize({width:390,height:844});
     await page.goto(url);await page.getByRole('link',{name:'Try the judge demo',exact:true}).waitFor();
     const boxes=await page.locator('.cover-nav a').evaluateAll(links=>links.map(link=>{const b=link.getBoundingClientRect();return [b.left,b.right];}));

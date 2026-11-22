@@ -1,6 +1,6 @@
 # CashAhead build prompt for Codebenders PS1
 
-Build CashAhead for “The One-Person Back Office” directly in `C:\Users\duvvu\Desktop\CB_code`. This prompt is the complete brief for a fresh build. If the current CashAhead project is already present there, inspect it first, keep its working implementation and saved studio data, and implement only missing behavior. Use the supplied Camera Studio frontend and keep new workspace implementation in this project. The older `CB` financial application is outside this build.
+Build CashAhead for “The One-Person Back Office” in the open CashAhead project folder. This prompt is the complete brief for a fresh build. If the current CashAhead project is already present there, inspect it first, keep its working implementation and saved studio data, and implement only missing behavior. Use the supplied Camera Studio frontend and keep new workspace implementation in this project. Implement the financial workspace from this specification.
 
 Build for Ananya Rao, an independent wedding photographer in Vijayawada who needs to know whom to chase before Friday’s crew and rental bills. Use a mobile-friendly HTML, CSS and browser JavaScript app with ES modules, INR currency formatting, a small local Node.js 20+ server, Node’s test runner and a Chromium browser walkthrough. The app must run locally with the bundled sample records and CSVs.
 
@@ -85,6 +85,7 @@ Use a native file share action where the device can share PDFs. Elsewhere provid
 The landing page has three entry points.
 
 - **Try the sample studio** opens Ananya Rao Photography at `/app` with the original forecast. Use Monday, 23 November 2026 as D+0 for all sample dates. Opening cash is ₹6,000 and the safety buffer is ₹0. Settings can restore this sample.
+- **Start the full demo** at the end of the landing page opens `/?demo=friday&start=overview`. Reset only the tab’s judge data, show Overview with ₹6,000 cash and Friday at −₹4,000, and let the visitor choose **Review rescue plan**. Refreshing the Overview must preserve confirmed changes.
 - **Try the judge demo** and `/?demo=friday` start a fresh, isolated run on Rescue plan at `/app/rescue?demo=friday`. Seed the regular sample, then apply the same confirmed 15-day delay to INV-104 that the owner can enter on Forecast. Open directly at the ₹4,000 Friday shortfall with 50% selected. Keep demo mode across navigation, preserve confirmed changes on refresh within the tab, and make **Studio settings → Restart judge demo** start fresh.
 - **My studio** opens `/mine` with the owner’s own data and local calendar date. Keep sample and personal ledgers in separate local storage keys and the judge ledger in session storage. Resetting either demo must preserve the personal ledger.
 

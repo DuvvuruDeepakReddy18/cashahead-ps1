@@ -4,13 +4,22 @@ CashAhead helps an independent wedding photographer answer three questions. Will
 
 ## Try CashAhead
 
-[Open the camera landing page](https://cashahead-ps1.vercel.app/) or [start the Friday judge demo](https://cashahead-ps1.vercel.app/?demo=friday). No account is required. The demo starts with a ₹4,000 shortfall and saves changes in your browser tab.
+[Open the deployed application](https://cashahead-ps1.vercel.app/) or [start the full demo on Overview](https://cashahead-ps1.vercel.app/?demo=friday&start=overview). No account is required. Start with Ananya’s ₹6,000 in cash and overdue invoices, then choose **Review rescue plan** to address the ₹4,000 Friday shortfall. Changes stay in your browser tab.
 
-## Three-minute submission video
+To replay the three-minute presentation, follow the [judge walkthrough](./CashAhead-3-Minute-Judge-Walkthrough.md). For the bank-import exercise, [download the four sample statements](./demo/CashAhead-Judge-Demo-Files.zip).
 
-[Watch the three-minute demo](./demo/CashAhead-PS1-Three-Minute-Demo.mp4) · [Download the sample bank files](./demo/CashAhead-Judge-Demo-Files.zip)
+## Codebenders usage, prompts and iterations
 
-Start at the camera cover and follow one new invoice through negotiation, payment and the client PDF. The [judge walkthrough and recording script](./CashAhead-3-Minute-Judge-Walkthrough.md) includes the clicks, narration, five PS1 checkpoints and replay tests. The implementation briefs are the [camera landing prompt](./CashAhead-Landing-Page-Prompt.md) and the [full feature build prompt](./CashAhead-IDE-Update-Prompt.md).
+The CashAhead project folder was opened in Codebenders IDE. Its Source Control view was used to push `main` to GitHub, which triggers the production build on Vercel.
+
+| Iteration | Prompt goal | What a judge can try |
+|---|---|---|
+| Invoice tracking and reconciliation | Show who owes what and since when. Let the owner choose the invoice when a bank transfer matches only by amount. | Draft a reminder from Overview, then import a sample CSV and confirm a partial receipt. |
+| Forecast and recovery | Change the expected payment from 50% to 25% and show who to chase. | Watch the first recommendation switch from Kiran & Divya to Lakshmi & Arjun. |
+| Negotiation, payment and pricing | Find the smallest split that covers bills. Put the receipt, balance and agreed dates on the invoice PDF. Calculate the minimum booking deposit. | Test an offer, save it, record a payment and download the PDF. Raise a booking cost and watch the deposit change. |
+| Camera landing and demo entry | Introduce the studio through the camera tour and give first-time visitors a clear starting point. | **Start the full demo** at the end opens Overview. **Try the judge demo** on the cover jumps to the Friday rescue plan shown in the recording. |
+
+Read the [full feature build prompt](./CashAhead-IDE-Update-Prompt.md) and the [camera landing prompt](./CashAhead-Landing-Page-Prompt.md) for the build instructions and acceptance checks.
 
 ## Run locally
 

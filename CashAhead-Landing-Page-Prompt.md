@@ -1,6 +1,6 @@
 # CashAhead landing-page build prompt | The Cash Crew camera studio
 
-Build the public home page for CashAhead, a cash planner for Ananya Rao, an independent wedding photographer in Vijayawada. Use the camera-studio tour supplied in `CashAhead-Camera-Studio.zip`. In the integrated repository the editable components are in `landing/cinema/`, the isolated tour examples in `landing/lib/`, and the production artwork and films in `images/`. Preserve the camera artwork, cast, interactions and section order when working in this repository. Use the existing workspace behind the cover links.
+Build the public home page for CashAhead, a cash planner for Ananya Rao, an independent wedding photographer in Vijayawada. Use the camera-studio tour included in the project. In this repository the editable components are in `landing/cinema/`, the isolated tour examples in `landing/lib/`, and the production artwork and films in `images/`. Preserve the camera artwork, cast, interactions and section order when working in this repository. Use the existing workspace behind the cover links.
 
 ## Give visitors two decisions on the first screen
 
@@ -9,6 +9,7 @@ Open on the large **CashAhead.** wordmark and miniature camera set, with **Know 
 | Visible control | Destination | Why it is there |
 |---|---|---|
 | **Try the judge demo** on the camera cover | `/?demo=friday` | A first-time judge can reach the ₹4,000 Friday gap in one click. The app opens its isolated rescue workspace at 50%. |
+| **Start the full demo** at the end | `/?demo=friday&start=overview` | Make this the prominent closing action. Start a fresh judge session on Overview with cash, overdue invoices and the Friday gap. |
 | **Sample studio** on the cover | `/app` | Ananya’s original ledger lets a visitor build the late-payment scenario themselves. Its accessible label is **Try the sample studio**. |
 | **My studio** in the masthead and a personal studio link at the end | `/mine` | Gives an owner a separate workspace with their own ledger and local calendar date. |
 | **Scroll through the lens** | First studio station | Visitors who prefer a guided story can follow the invoice before opening the app. |
@@ -21,7 +22,7 @@ Open on the large **CashAhead.** wordmark and miniature camera set, with **Know 
 4. **Meet the studio crew.** Jot is the pocket-camera bookkeeper, Scout the viewfinder forecaster, Mend the calculator planner, and Dock the receipt-printer payment matcher. Selecting a crew member changes the portrait, explanation and example. Keep the optional 3D inspection, drag and keyboard rotation, and the portrait fallback.
 5. **Case prints.** Hang the ten studio mistakes on the drying line. Keep category selection, previous/next controls, and a detail sheet showing the mistake and the correction. Support closing the sheet and returning to the rescue desk.
 6. **Toolkit and week calculator.** Pair the four crew roles with invoice entry, forecasting, collections and bank matching. Let visitors edit cash, bill amount and day, client payment and day, and days late. Recompute each day’s closing balance and let the visitor inspect one day. With ₹6,000 opening cash and ₹10,000 of Friday bills, a late ₹11,000 payment leaves Friday ₹4,000 short.
-7. **Reminders and close.** Show example reminder drafts, a recorded promise, an invoice PDF and a bank-match example. Make the owner’s role clear: they review, send and confirm. Keep sample multilingual copy within the tour. Finish with the Friday rescue link and routes to the sample and personal studios.
+7. **Reminders and close.** Show example reminder drafts, a recorded promise, an invoice PDF and a bank-match example. Make the owner’s role clear: they review, send and confirm. Keep sample multilingual copy within the tour. Finish with **Start the full demo** as the primary action and **Open my studio** as the secondary link. The closing demo opens Overview. From there, **Review rescue plan** opens the ranked collection actions.
 
 ## Carry the camera studio into the workspace
 

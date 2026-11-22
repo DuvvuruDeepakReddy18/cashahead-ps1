@@ -31,12 +31,14 @@ function go(url){history.pushState({},'',url);route();window.scrollTo(0,0);}
 function route(){
   collectionRates.clear();
   close();
-  const isJudge=new URLSearchParams(location.search).get('demo')==='friday';
+  const params=new URLSearchParams(location.search);
+  const isJudge=params.get('demo')==='friday';
   const launching=isJudge && location.pathname==='/';
   if(launching){
     restartJudgeDemo();
-    const requestedOffer=new URLSearchParams(location.search).get('offer');
-    history.replaceState({},'',requestedOffer?offerHref('judge',requestedOffer):studioHref('judge','rescue'));
+    const requestedOffer=params.get('offer');
+    const firstView=params.get('start')==='overview'?'home':'rescue';
+    history.replaceState({},'',requestedOffer?offerHref('judge',requestedOffer):studioHref('judge',firstView));
   }
   const path=location.pathname.split('/').filter(Boolean);
   if(!path.length){location.reload();return;}

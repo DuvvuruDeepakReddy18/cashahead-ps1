@@ -6,13 +6,13 @@ export default function Closing() {
         <br />
         before it arrives.
       </h2>
-      <p className="line">We do the math. You make the call.</p>
+      <p className="line">Start on Ananya’s Overview. See who owes her money, then find a way to cover Friday’s bills.</p>
       <div className="btns">
-        <a className="primary" href="/?demo=friday">
-          Open the Friday rescue plan
+        <a className="primary" href="/?demo=friday&start=overview">
+          Start the full demo <span aria-hidden="true">↗</span>
         </a>
+        <a className="studio-link" href="/mine">Open my studio</a>
       </div>
-      <p className="fine"><a href="/mine">Open my studio</a> · <a href="/app">Explore the sample ledger</a></p>
       <div className="crew-line" aria-label="The crew">
         <div className="crew-slot">
           <img className="crew-badge" src="/images/cast-jot.webp" alt="" />

@@ -4,6 +4,7 @@ test-results/
 /src/pdfengine.js
 /src/pdffonts.js
 /tour/
+/demo/CashAhead-PS1-Three-Minute-Demo.mp4
 /.codebenders/
 
 .env*.local
