@@ -65,7 +65,6 @@ export default function Album() {
     pin = useRef(null),
     host = useRef(null),
     engine = useRef(null),
-    video = useRef(null),
     ready3D = useRef(false),
     backupPass = useRef(false),
     insets = useRef([0, 0]),
@@ -78,8 +77,6 @@ export default function Album() {
     entryProgress = useRef(null);
   const [active, setActive] = useState(0),
     [live, setLive] = useState(false),
-    [backup, setBackup] = useState(false),
-    [videoReady, setVideoReady] = useState(false),
     [pending, setPending] = useState(false);
   const trackInvoice = useCallback((frame, layer) => {
     const useModel = ready3D.current && !backupPass.current && engine.current;
@@ -93,27 +90,12 @@ export default function Album() {
     section.current?.toggleAttribute("data-invoice-away", !!frame && !useModel);
     return !!useModel;
   }, []);
-  function syncVideo() {
-    const player = video.current;
-    if (
-      !player ||
-      !Number.isFinite(player.duration) ||
-      player.seeking ||
-      player.readyState < 1
-    )
-      return;
-    const target = playhead.current * Math.max(0, player.duration - 1 / 24);
-    if (Math.abs(target - player.currentTime) > 0.51 / 24) {
-      player.currentTime = target;
-    } else if (player.readyState >= 2) setVideoReady(true);
-  }
   function apply(p) {
     const value = clamped(p);
     playhead.current = value;
     section.current?.style.setProperty("--playhead", value);
     if (!backupPass.current)
       engine.current?.setProgress(value, performing.current);
-    syncVideo();
     section.current?.style.setProperty("--push", ease(value, 0.008, 0.105));
     section.current.style.setProperty(
       "--fallback-blend",
@@ -133,12 +115,9 @@ export default function Album() {
     performing.current = entry > 0.9;
     if (entry > 0.08 && !ready3D.current && !backupPass.current) {
       backupPass.current = true;
-      setBackup(true);
     } else if (entry < 0.012 && ready3D.current && backupPass.current) {
       backupPass.current = false;
       setLive(true);
-      setBackup(false);
-      setVideoReady(false);
     }
     const card = opening.current;
     if (card && entryProgress.current !== entry) {
@@ -318,8 +297,6 @@ export default function Album() {
             ready3D.current = false;
             backupPass.current = true;
             setLive(false);
-            setVideoReady(false);
-            setBackup(true);
           },
           onReady: () => {
             if (disposed) return;
@@ -337,7 +314,6 @@ export default function Album() {
         if (disposed) return;
         ready3D.current = false;
         backupPass.current = true;
-        setBackup(true);
         setLive(false);
       });
     return () => {
@@ -441,29 +417,6 @@ export default function Album() {
                     fetchPriority="high"
                   />
                 </picture>
-                {backup && (
-                  <video
-                    ref={video}
-                    className={"backup-film" + (videoReady ? " has-frame" : "")}
-                    preload="auto"
-                    muted
-                    playsInline
-                    aria-hidden="true"
-                    onLoadedData={syncVideo}
-                    onSeeked={syncVideo}
-                    onError={() => setVideoReady(false)}
-                  >
-                    <source
-                      media="(orientation:portrait)"
-                      src="/images/crew-tracking-portrait.mp4"
-                      type="video/mp4"
-                    />
-                    <source
-                      src="/images/crew-tracking-wide.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                )}
                 <picture className="released-desk" aria-hidden="true">
                   <source
                     media="(orientation: portrait)"

@@ -1319,28 +1319,17 @@
   transition: none;
 }
 
-.studio-stills,
-.backup-film {
+.studio-stills {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-.studio-stills {
   opacity: 1;
   transition: opacity 0.24s ease-out;
 }
 .studio-stills.live-stills {
   opacity: 0;
-}
-.backup-film {
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.22s ease-out;
-}
-.backup-film.has-frame {
-  opacity: 1;
 }
 .world-viewport {
   transition: opacity 0.24s ease-out;

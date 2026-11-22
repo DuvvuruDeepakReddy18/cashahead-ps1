@@ -28,6 +28,13 @@ export async function checkCameraTour(browser,url){
     for (const width of [1280,390]) {
       await page.setViewportSize({width,height:844});
       await page.goto(url);
+      const scenes=page.getByRole('navigation',{name:'Studio week scenes'});
+      await scenes.getByRole('button',{name:'Delay',exact:true}).click();
+      const still=page.locator('#week[data-beat="delay"] img[src="/images/film-delay.webp"]');
+      await still.waitFor({state:'attached'});
+      const currentImage=await still.evaluate(async img=>{await img.decode();return img.currentSrc;});
+      assert.equal(new URL(currentImage).pathname,width===390?'/images/film-delay-small.webp':'/images/film-delay.webp');
+      assert.equal(await page.locator('video').count(),0);
       const closing=page.getByRole('region',{name:'Get started'});
       assert.equal(await closing.getByRole('link',{name:'Open my studio'}).getAttribute('href'),'/mine');
       await closing.getByRole('link',{name:'Start the full demo'}).click();
@@ -54,9 +61,7 @@ export async function checkCameraTour(browser,url){
     await page.getByRole('heading',{name:/₹4,000 short on/}).waitFor();
     const loadedFonts=await page.evaluate(async()=>(await document.fonts.load('650 16px "Bricolage Grotesque Variable"','CashAhead')).length);
     assert.ok(loadedFonts>0);
-    const film=await context.request.get(url+'/images/crew-tracking-wide.mp4',{headers:{Range:'bytes=10-39'}});
-    assert.equal(film.status(),206);assert.equal((await film.body()).length,30);
     assert.deepEqual(missing,[]);assert.deepEqual(errors,[]);
-    console.log('PASS · camera cover, interactive rescue cases, crew, week calculator, toolkit, mobile navigation, motion preference and film streaming');
+    console.log('PASS · camera cover, interactive rescue cases, crew, week calculator, toolkit, mobile navigation, motion preference and responsive chapter illustrations');
   }finally{await context.close();}
 }

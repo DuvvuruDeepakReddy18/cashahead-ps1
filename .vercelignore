@@ -9,3 +9,12 @@ src/pdfengine.js
 src/pdffonts.js
 demo
 test-results
+*.mp4
+*.mov
+*.webm
+*.m4v
+*.mkv
+*.avi
+*.ogv
+*.mpeg
+*.mpg

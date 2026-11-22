@@ -1,6 +1,6 @@
 # CashAhead landing-page build prompt | The Cash Crew camera studio
 
-Build the public home page for CashAhead, a cash planner for Ananya Rao, an independent wedding photographer in Vijayawada. Use the camera-studio tour included in the project. In this repository the editable components are in `landing/cinema/`, the isolated tour examples in `landing/lib/`, and the production artwork and films in `images/`. Preserve the camera artwork, cast, interactions and section order when working in this repository. Use the existing workspace behind the cover links.
+Build the public home page for CashAhead, a cash planner for Ananya Rao, an independent wedding photographer in Vijayawada. Use the camera-studio tour included in the project. In this repository the editable components are in `landing/cinema/`, the isolated tour examples in `landing/lib/`, and the production artwork in `images/`. Preserve the camera artwork, cast, interactions and section order when working in this repository. Use the existing workspace behind the cover links.
 
 ## Give visitors two decisions on the first screen
 
@@ -30,7 +30,7 @@ Use Bricolage Grotesque for the wordmark and interface, Fraunces for editorial h
 
 ## Build and test it as a static site
 
-Use the existing React tour, esbuild entry points and lazily loaded Three.js scenes. Keep the HTML cover available as the tour initializes. Serve fonts, posters and the portrait and landscape films from the app’s own origin. Respect reduced motion and let people navigate with ordinary links and buttons. Keep both the gallery artwork and direct app entry usable when live 3D is unavailable. The static host must serve real assets and fall back to `index.html` on workspace routes.
+Use the existing React tour, esbuild entry points and lazily loaded Three.js scenes. Keep the HTML cover available as the tour initializes. Serve fonts and responsive WebP artwork from the app’s own origin. Show the relevant chapter illustration when the live 3D scene is unavailable. Keep video files out of the submission. Respect reduced motion and let people navigate with ordinary links and buttons. Keep both the gallery artwork and direct app entry usable when live 3D is unavailable. The static host must serve real assets and fall back to `index.html` on workspace routes.
 
 Run `npm ci`, `npm run build` and `npm run test:demo`. Check the camera cover at desktop width and 390 pixels. Check both cover links, personal studio entry, the three rescue cases, crew selection, week calculation and reduced-motion controls. Confirm the live judge workflow can start directly from the cover, switch collection percentages, save an agreement and open an invoice PDF.
 
