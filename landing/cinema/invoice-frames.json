@@ -1,0 +1,18 @@
+{
+  "wide": {
+    "width": 960,
+    "height": 488,
+    "x": 529.5,
+    "y": 251.5,
+    "paperWidth": 213,
+    "paperHeight": 239
+  },
+  "portrait": {
+    "width": 448,
+    "height": 624,
+    "x": 256.5,
+    "y": 316.5,
+    "paperWidth": 137,
+    "paperHeight": 153
+  }
+}

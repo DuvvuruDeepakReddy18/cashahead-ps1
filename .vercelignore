@@ -1,0 +1,11 @@
+.git
+.codebenders
+.vercel
+.env*.local
+node_modules
+dist
+tour
+src/pdfengine.js
+src/pdffonts.js
+demo
+test-results

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5efdf">
+  <meta name="description" content="Follow one wedding invoice through Ananya’s camera studio, then try CashAhead’s forecast, rescue plan and booking deposit calculator.">
+  <title>CashAhead · The Cash Crew</title>
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/tour/fonts.css">
+  <script>
+    const tourPage=location.pathname==='/' && new URLSearchParams(location.search).get('demo')!=='friday';
+    const css=document.createElement('link');
+    css.rel='stylesheet';css.href=tourPage?'/tour/tour.css':'/styles.css';
+    document.head.append(css);
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="home-page"><!--tour-content--></template>
+  <dialog id="panel"></dialog>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <noscript>Enable JavaScript to explore the camera studio and use the cash planner.</noscript>
+  <script>
+    const host=document.getElementById('app');
+    const template=document.getElementById('home-page');
+    if(tourPage)host.append(template.content);
+    else host.setAttribute('role','main');
+    template.remove();
+    const entry=document.createElement('script');
+    entry.type='module';entry.src=tourPage?'/tour/client.js':'/src/app.js';
+    document.body.append(entry);
+  </script>
+</body>
+</html>

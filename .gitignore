@@ -1,0 +1,11 @@
+node_modules/
+dist/
+test-results/
+/src/pdfengine.js
+/src/pdffonts.js
+/tour/
+/.codebenders/
+
+.env*.local
+
+.vercel
