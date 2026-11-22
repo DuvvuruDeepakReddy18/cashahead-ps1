@@ -2,9 +2,9 @@
 
 A cash planner for independent photography studios. Ananya has ₹6,000 on hand, a client paying late and ₹10,000 in crew and rental bills due Friday. CashAhead shows the ₹4,000 gap, identifies which invoice could cover it and recalculates the forecast when a payment arrives.
 
-**[Open the deployed app](https://cashahead-ps1.vercel.app/) · [Start the full demo on Overview](https://cashahead-ps1.vercel.app/?demo=friday&start=overview)**
+**[Open CashAhead](https://cashahead-ps1.vercel.app/)**
 
-Both links work without a login. The demo uses fictional studio records and keeps changes in the current browser tab. Opening the full demo link again starts a fresh run.
+The link opens the camera landing page. Explore the studio tour, then select **Start the full demo** at the end to begin on Overview. The demo runs without login and keeps changes to the fictional studio records in the current browser tab.
 
 ## Try it as a judge
 
